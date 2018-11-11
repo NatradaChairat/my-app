@@ -1,6 +1,7 @@
 # MyApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
+Using Angular material https://material.angular.io
 
 ## Development server
 
