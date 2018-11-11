@@ -9,12 +9,17 @@ import {HttpClientModule} from '@angular/common/http';
 import {ErrorStateMatcher, MatNativeDateModule, ShowOnDirtyErrorStateMatcher} from '@angular/material';
 import {DemoMaterialModule} from './meterial.module';
 import {AppRoutingModule} from './app-routing.module';
+import {environment} from '../environments/environment';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {RegisterSuccessComponent} from './register-success/register-success.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterSuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,9 @@ import {AppRoutingModule} from './app-routing.module';
     MatNativeDateModule,
     ReactiveFormsModule,
     DemoMaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   entryComponents: [RegisterComponent],
   providers: [{provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
